@@ -8,6 +8,7 @@ const elements = {
   newProfileButton: document.querySelector('#new-profile-button'),
   body: document.querySelector('body'),
   username: document.querySelector('#gender'),
+  address: document.querySelector('#address'),
 };
 
 function getRandomSeed() {
@@ -35,9 +36,16 @@ function updateUserInterface(user) {
   elements.email.textContent = email;
   elements.username.textContent = gender;
   elements.avatarImage.src = buildAvatarUrl(getRandomSeed());
+  elements.address.textContent =
+    user.location.street.name +
+    ', ' +
+    user.location.street.number +
+    ', ' +
+    user.location.city;
   changeBackgroundColor();
 }
-
+//atualizar: se for masculino colocar avatar masculino consultar documentação.
+//e poderia traduzir os generos gerados
 async function updateProfile() {
   try {
     const user = await getRandomUser();

@@ -1,66 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Avatar Aleatório com Nome e Email</title>
+    <title>Avatar Aleatório</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div>
-      <h1>Avatar Aleatório com Nome e Email</h1>
+      <h1>Avatar Aleatório</h1>
       <img id="avatar-image" src="" alt="Avatar" width="150" height="150" />
       <p><strong>Nome:</strong> <span id="name"></span></p>
       <p><strong>Email:</strong> <span id="email"></span></p>
       <p><strong>Gênero:</strong> <span id="gender"></span></p>
+      <p><strong>Endereço:</strong> <span id="address"></span></p>
       <button id="new-profile-button">Gerar Novo Perfil</button>
     </div>
 
-    <!-- <script>
-      const API_AVATAR_URL = 'https://avatars.dicebear.com/api/adventurer/';
-      const API_RANDOMUSER_URL = 'https://randomuser.me/api/';
-
-      function getRandomSeed() {
-        return Math.random().toString(36).substring(7);
-      }
-
-      async function getProfile() {
-        try {
-          const seed = getRandomSeed();
-          const avatarUrl = `${API_AVATAR_URL}${seed}.svg`;
-
-          const randomUserResponse = await fetch(API_RANDOMUSER_URL);
-          const userData = await randomUserResponse.json();
-
-          const name = `${userData.results[0].name.first} ${userData.results[0].name.last}`;
-          const email = userData.results[0].email;
-
-          const profile = {
-            avatar: avatarUrl,
-            name: name,
-            email: email,
-          };
-
-          return profile;
-        } catch (error) {
-          console.log('Ocorreu um erro:', error);
-        }
-      }
-
-      async function updateProfile() {
-        const profile = await getProfile();
-
-        document.getElementById('avatar-image').src = profile.avatar;
-        document.getElementById('name').textContent = profile.name;
-        document.getElementById('email').textContent = profile.email;
-      }
-
-      document
-        .getElementById('new-profile-button')
-        .addEventListener('click', updateProfile);
-
-      updateProfile();
-    </script> -->
     <script src="script.js"></script>
   </body>
 </html>
